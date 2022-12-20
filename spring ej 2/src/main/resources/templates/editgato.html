@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="u8-8">
+    <meta name="author" content="UMA">
+    <title>Anyadir Gato</title>
+</head>
+
+<body>
+    <h1>EDITAR GATO:</h1>
+    <fieldset>
+        <legend>Menu Editar gato</legend>
+        <form th:action="@{/actualizaGato}" method="POST" th:object="${gato}">
+            <label>Nombre:
+                <input type="text" th:field="${gato.name}"> 
+            </label>
+            <br>
+            <label>Edad:
+                <input type="text" th:field="${gato.Edad}">
+            </label>
+            <br>
+            <label>Color:
+                <input type="text" th:field="${gato.Color}">
+            </label>
+            <br>
+            <label>Raza ID:
+                <input type="text" th:field="${gato.raza.ID}">
+            </label>
+            <br>
+            <label>ID</label> <input type="number" th:field="*{ID}" autofocus="autofocus" readonly placeholder="ID"/>
+        
+            <input type="submit" value="Crear">
+            <input type="reset" value="Reset">
+
+        </form>
+    </fieldset>
+</body>
+
+</html>
